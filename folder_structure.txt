@@ -1,0 +1,24 @@
+/project-root
+│
+├── /app
+│   ├── /static               # Static files (CSS, JavaScript, images)
+│   │   ├── /css
+│   │   │   └── styles.css     # Custom CSS for styling
+│   │   ├── /js
+│   │   │   └── scripts.js     # Main JavaScript for handling frontend logic
+│   │   └── /uploads           # Folder for storing uploaded CSV files
+│   │
+│   ├── /templates             # HTML templates for rendering (Jinja2 templating engine)
+│   │   └── index.html         # Main HTML file for the frontend
+│   │
+│   ├── __init__.py            # Initializes the Flask app (app factory pattern)
+│   ├── routes.py              # Flask routes for handling requests (upload, process, etc.)
+│   └── models.py              # (Optional) Database models (if using a database like SQLite)
+│
+├── /instance                  # Instance folder for configurations (e.g., database, environment variables)
+│   └── config.py              # Configuration file for the app (database connection, secrets, etc.)
+│
+├── venv/                      # Virtual environment (Python dependencies)
+├── app.py                     # Main entry point for running the Flask application
+├── requirements.txt           # Python dependencies list
+└── README.md                  # Project documentation

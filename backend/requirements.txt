@@ -1,0 +1,4 @@
+Flask==2.1.1
+boto3==1.17.97
+openai==0.27.0
+pandas

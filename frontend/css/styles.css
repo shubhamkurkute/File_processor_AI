@@ -1,0 +1,49 @@
+/* styles.css */
+body {
+    background-color: #f4f6f9; /* Light grey background */
+    font-family: 'Roboto', sans-serif; /* Modern font */
+}
+
+h1, h2 {
+    color: #007bff; /* Use primary blue for headings */
+}
+
+.card {
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 30px;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#upload-section,
+#process-section,
+#results-section {
+    margin-bottom: 20px;
+}
+
+#file-status, 
+#processing-status, 
+#results {
+    display: none; /* Hide alerts initially */
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+input[type="file"] {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.alert {
+    font-size: 14px;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none; /* Hide by default */
+}

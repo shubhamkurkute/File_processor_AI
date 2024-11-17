@@ -1,0 +1,6 @@
+{
+  "action": "process",
+  "body": {
+    "file-name": "input.csv"
+  }
+}
