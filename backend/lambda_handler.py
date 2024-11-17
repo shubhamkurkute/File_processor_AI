@@ -79,9 +79,22 @@ def lambda_handler(event, context):
                 'statusCode': 400,
                 'body': json.dumps({'error': 'action not provided'})
             }
-
+            
+        if action == 'upload':
+            try:
+                file_content = body['file_content']  # Expected to be base64 encoded
+                upload_file(file_content, file_name)
+                return {
+                    'statusCode': 200,
+                    'body': json.dumps({"message": "File uploaded successfully"})
+                }
+            except Exception as e:
+                return {
+                    'statusCode': 500,
+                    'body': json.dumps({'error': f'Error during upload: {str(e)}'})
+                }
         # Process the action
-        if action == 'process':
+        elif action == 'process':
             try:
                 process_data(file_name)
                 return {
@@ -93,8 +106,20 @@ def lambda_handler(event, context):
                     'statusCode': 500,
                     'body': json.dumps({'error': f'Error during processing: {str(e)}'})
                 }
+        
+        elif action == 'llm_summarize':
+            try:
+                summary = llm_summarize(file_name)
+                return {
+                    'statusCode': 200,
+                    'body': json.dumps({"summary": summary})
+                }
+            except Exception as e:
+                return {
+                    'statusCode': 500,
+                    'body': json.dumps({'error': f'Error during summarization: {str(e)}'})
+                }
 
-        # Add more action handlers as needed
         else:
             return {
                 'statusCode': 400,
@@ -111,4 +136,3 @@ def lambda_handler(event, context):
             'statusCode': 500,
             'body': json.dumps({'error': f'Unexpected error: {str(e)}'})
         }
-
